@@ -49,10 +49,11 @@ class App(customtkinter.CTk):
         try:
             print('alphanumeric key {0} pressed'.format(key.char))
             self.key_queue.append(key.char.upper())
-        except AttributeError as e:
-            print(e)
+        except AttributeError:
             print('special key {0} pressed'.format(key.name))
             self.key_queue.append(key.name.title().split('_')[0])
+        except Exception as e:
+            print(repr(e))
         finally:
             self.label.configure(text=self.sep.join(list(self.key_queue)))
 
