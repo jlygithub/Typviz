@@ -1,0 +1,2 @@
+- [ ] Use keyboard instead of pynput
+- [ ] Support Hotkeys
